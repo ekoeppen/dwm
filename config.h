@@ -54,6 +54,9 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "gnome-terminal", NULL };
+static const char *downvol[] = { "amixer", "set", "Master", "3-", NULL};
+static const char *mutevol[] = { "amixer", "set", "Master", "0", NULL};
+static const char *upvol[] = { "amixer", "set", "Master", "3+", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,6 +83,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ 0,                            0x1008ff11, spawn,         {.v = downvol } },
+	{ 0,                            0x1008ff12, spawn,         {.v = mutevol } },
+	{ 0,                            0x1008ff13, spawn,         {.v = upvol } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
