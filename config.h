@@ -57,6 +57,7 @@ static const char *termcmd[]  = { "gnome-terminal", NULL };
 static const char *downvol[] = { "amixer", "set", "Master", "3-", NULL};
 static const char *mutevol[] = { "amixer", "set", "Master", "0", NULL};
 static const char *upvol[] = { "amixer", "set", "Master", "3+", NULL};
+static const char *lock[] = { "slock", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -86,6 +87,7 @@ static Key keys[] = {
 	{ 0,                            0x1008ff11, spawn,         {.v = downvol } },
 	{ 0,                            0x1008ff12, spawn,         {.v = mutevol } },
 	{ 0,                            0x1008ff13, spawn,         {.v = upvol } },
+	{ Mod4Mask,                     XK_l,      spawn,          {.v = lock } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
