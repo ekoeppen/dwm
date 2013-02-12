@@ -53,7 +53,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "gnome-terminal", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *downvol[] = { "amixer", "set", "Master", "3-", NULL};
 static const char *mutevol[] = { "amixer", "set", "Master", "0", NULL};
 static const char *upvol[] = { "amixer", "set", "Master", "3+", NULL};
