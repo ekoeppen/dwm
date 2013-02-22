@@ -54,6 +54,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *alttermcmd[]  = { "st", "-d", NULL };
 static const char *downvol[] = { "amixer", "set", "Master", "3-", NULL};
 static const char *mutevol[] = { "amixer", "set", "Master", "0", NULL};
 static const char *upvol[] = { "amixer", "set", "Master", "3+", NULL};
@@ -63,6 +64,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask|ControlMask, XK_Return, spawn,          {.v = alttermcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
